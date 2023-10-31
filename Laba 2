@@ -4,7 +4,7 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Лабораторна робота №2, виконав студент групи ТЗ-11 - Хубашвілі Богдан");
-        System.out.println("Варіант - 25,завдання для виконання: 1 - 14, 2 - 5, 3 - 23, 4 - контр. питання ");
+        System.out.println("Варіант - 25,завдання для виконання: 1 - 14, 2 - 5, 3 - 23 ");
 
 
         Scanner scanner = new Scanner(System.in);
