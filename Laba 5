@@ -1,0 +1,53 @@
+public class Main {
+    public static void main(String[] args) {
+        double[] array = {5.4, -8.2, 2.8, -4.1, 7.6, 10.0, -3.3};
+
+        // Сортування методом Bubble sort
+        System.out.println("Bubble Sort:");
+        bubbleSort(array);
+        printArray(array);
+
+        // Повернення масиву до початкового стану для сортування методом Selection sort
+        array = new double[]{5.4, -8.2, 2.8, -4.1, 7.6, 10.0, -3.3};
+
+        // Сортування методом Selection sort
+        System.out.println("Selection Sort:");
+        selectionSort(array);
+        printArray(array);
+    }
+
+    public static void bubbleSort(double[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    double temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void selectionSort(double[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            double temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void printArray(double[] arr) {
+        for (double value : arr) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
+}
