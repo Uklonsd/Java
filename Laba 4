@@ -1,0 +1,47 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array = {5, -8, 2, -4, 7, 10, -3, 0, 12, -6}; // Вхідний масив
+
+        // Знайти другий мінімальний за модулем елемент масиву
+        int min = Integer.MAX_VALUE;
+        int secondMin = Integer.MAX_VALUE;
+
+        for (int i = 0; i < array.length; i++) {
+            int absValue = Math.abs(array[i]);
+            if (absValue < min) {
+                secondMin = min;
+                min = absValue;
+            } else if (absValue < secondMin && absValue != min) {
+                secondMin = absValue;
+            }
+        }
+
+        System.out.println("Другий мінімальний за модулем елемент масиву: " + secondMin);
+
+        // Знайти кількість додатних елементів масиву, індекс яких кратний 4
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 4 == 0 && array[i] > 0) {
+                count++;
+            }
+        }
+
+        System.out.println("Кількість додатних елементів масиву, індекс яких кратний 4: " + count);
+
+        // Сформувати новий масив згідно з умовою
+        int[] newArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                newArray[i] = array[i] * -1; // всі від’ємні елементи помножити на -1
+            } else if (array[i] > 0) {
+                newArray[i] = array[i] - 3; // всі додатні елементи зменшити на 3
+            } else {
+                newArray[i] = -2; // елементи, які дорівнюють 0, замінити на -2
+            }
+        }
+
+        System.out.println("Новий масив після обробки: " + Arrays.toString(newArray));
+    }
+}
